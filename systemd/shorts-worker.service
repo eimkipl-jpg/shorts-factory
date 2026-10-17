@@ -1,0 +1,17 @@
+[Unit]
+Description=Shorts Factory - render worker (whisper + ffmpeg + rclone)
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=__USER__
+WorkingDirectory=__INSTALL_DIR__
+ExecStart=__INSTALL_DIR__/venv/bin/python -m core.worker
+Restart=always
+RestartSec=5
+# Рендер не должен съесть весь сервер и мешать боту
+Nice=10
+
+[Install]
+WantedBy=multi-user.target

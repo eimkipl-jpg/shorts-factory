@@ -1,0 +1,4 @@
+# Устанавливается install.sh в /etc/cron.d/shorts-factory
+# Пополнение банка фонов - каждую ночь в 03:00, уборка - в 04:00
+0 3 * * * __USER__ cd __INSTALL_DIR__ && __INSTALL_DIR__/venv/bin/python -m backgrounds.refill >> __ROOT__/logs/refill.log 2>&1
+0 4 * * * __USER__ cd __INSTALL_DIR__ && __INSTALL_DIR__/venv/bin/python -m transport.cleanup >> __ROOT__/logs/cleanup.log 2>&1

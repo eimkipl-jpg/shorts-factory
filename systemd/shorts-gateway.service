@@ -1,0 +1,15 @@
+[Unit]
+Description=Shorts Factory - Telegram gateway
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=__USER__
+WorkingDirectory=__INSTALL_DIR__
+ExecStart=__INSTALL_DIR__/venv/bin/python -m gateway.bot
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target

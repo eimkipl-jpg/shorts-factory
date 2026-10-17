@@ -1,0 +1,12 @@
+aiogram>=3.13,<4
+python-dotenv>=1.0
+faster-whisper>=1.0
+edge-tts>=6.1
+requests>=2.32
+transformers
+sentencepiece
+scenedetect>=0.6.4
+opencv-python-headless
+numpy
+Pillow
+yt-dlp
